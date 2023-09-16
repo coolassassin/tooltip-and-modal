@@ -1,13 +1,39 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div id="app">
+    <div>
+      <button id="btn1">
+        Button 1
+      </button>
+      <button id="btn2">
+        Button 2
+      </button>
+      <button id="btn3">
+        Button 3
+      </button>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModalBtn" class="close">&times;</span>
+            <h2>Modal Header</h2>
+            <p>This is a modal window.</p>
+        </div>
+    </div>
+      <div id="tt" class="tooltip">
+        This is a tooltip!
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+
 </html>
