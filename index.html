@@ -1,13 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+</head>
+<body>
+<div id="app">
+<!--    <div class="hover-text">hover me-->
+<!--        <span class="tooltip-text" id="top">I'm a tooltip!</span>-->
+<!--    </div>-->
+    <button class="tooltip-hover" id="tooltip-hover-button">Button<span class="tooltip-text" id="tooltip-hover">Example</span></button>
+    <button class="tooltip-hover" id="tooltip-button">Button<span class="tooltip-text" id="tooltip">Example</span></button>
+    <button id="modal-button">Button</button>
+<!--    <div class="btn">-->
+<!--        <button class="tooltip-hover" id="tooltip-hover">Button</button>-->
+<!--    </div>-->
+<!--    <div class="btn">-->
+<!--        <button class="tooltip-hover" id="tooltip-button">Button</button>-->
+<!--    </div>-->
+<!--    <div class="btn">-->
+<!--        <button id="modal-button">Button</button>-->
+<!--    </div>-->
+</div>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="modal-close-button">&times;</span>
+        <h2>Example modal window</h2>
+        <p>This is example of the simple modal window</p>
+    </div>
+</div>
+<script type="module" src="/main.js"></script>
+</body>
 </html>
