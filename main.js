@@ -3,48 +3,69 @@ import './style.css';
 console.log(123123123);
 
 const btn1 = document.getElementById("btn1");
-const tt = document.getElementById("tt");
 
 // Add event listeners for mouseover and mouseout
 btn1.addEventListener("mouseover", () => {
-    const buttonRect = btn1.getBoundingClientRect();
 
-    const tooltipTop = buttonRect.top - buttonRect.height; 
-    const tooltipLeft = buttonRect.left;
+    const { top, height, left } = btn1.getBoundingClientRect();
+
+    const tooltip = document.createElement('div');
+
+    tooltip.className = 'tooltip';
+    tooltip.textContent = "This is a tooltip for Button 1!";
+    tooltip.id = `${btn1.id}-tooltip`;
+
+    const tooltipTop = top -  height;
+    const tooltipLeft = left;
+
+    tooltip.style.top = `${tooltipTop}px`;
+    tooltip.left = `${tooltipLeft}px`;
 
     // Set the tooltip position
-    tt.style.top = `${tooltipTop}px`;
-    tt.style.left = `${tooltipLeft}px`;
+    tooltip.style.top = `${tooltipTop}px`;
+    tooltip.style.left = `${tooltipLeft}px`;
 
     // Show the tooltip
-    tt.style.display = "block";
+    tooltip.style.display = "block";
+
+    btn1.appendChild(tooltip);
 });
 
 btn1.addEventListener("mouseout", () => {
-    // Hide the tooltip when the mouse leaves the button
-    tt.style.display = "none";
+    const tooltip = document.getElementById(`${btn1.id}-tooltip`);
+
+    btn1.removeChild(tooltip)
 });
 
 const btn2 = document.getElementById("btn2");
 
+btn2.addEventListener("click", async (event) => {
+    const existingTooltip = document.getElementById(`${btn2.id}-tooltip`);
 
-btn2.addEventListener("click", (event) => {
-    if(tt.style.display == "block"){
-        tt.style.display = "none";
+    if (existingTooltip !== null) {
+        btn2.removeChild(existingTooltip);
         return;
     }
 
-    const buttonRect = btn2.getBoundingClientRect();
+    const { top, height, left } = btn2.getBoundingClientRect();
 
-    const tooltipTop = buttonRect.top - buttonRect.height; 
-    const tooltipLeft = buttonRect.left;
+    const tooltip = document.createElement('div');
+    
+    tooltip.className = 'tooltip';
+    tooltip.textContent = "This is a tooltip for Button 2!";
+    tooltip.id = `${btn2.id}-tooltip`;
+
+    const tooltipTop = top - height;
+    const tooltipLeft = left;
 
     // Set the tooltip position
-    tt.style.top = `${tooltipTop}px`;
-    tt.style.left = `${tooltipLeft}px`;
+    tooltip.style.top = `${tooltipTop}px`;
+    tooltip.left = `${tooltipLeft}px`;
 
     // Show the tooltip
-    tt.style.display = "block";
+    tooltip.style.display = "block";
+
+    btn2.appendChild(tooltip)
 });
 
 const openModalBtn = document.getElementById("btn3");
