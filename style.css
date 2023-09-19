@@ -130,8 +130,7 @@ button:focus-visible {
 }
 
 .tooltip-text {
-    bottom: 105%;
-    visibility: hidden;
+    bottom: 130%;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -140,9 +139,13 @@ button:focus-visible {
     background-color: #2e3238;
     border-radius: 10px;
     padding: 10px 15px 10px 15px;
-
 }
 
-#tooltip-hover-button:hover .tooltip-text {
-    visibility: visible;
+.tooltip-text::after{
+    position: absolute;
+    content: "";
+    transform: translate(-70%, 160%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 12px solid #2e3238;
 }
