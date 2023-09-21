@@ -8,8 +8,17 @@
   </head>
   <body>
     <div id="app">
+      <modal></modal>
       <button id="on_hover">Tooltip on hover</button>
       <button id="on_click">Tooltip on click</button>
+      <button id="show_modal">Modal on click</button>
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <h3>Modal window</h3>
+          Hello JS World
+          <button id="modal_ok" class="close"> OK </button>
+        </div>
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
