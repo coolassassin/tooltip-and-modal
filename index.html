@@ -1,13 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="app"></div>
     <script type="module" src="/main.js"></script>
-  </body>
+
+    <div id="buttons" align="center">
+        <button>
+            <tooltip placement="topLeft" trigger="hover">HI :)</tooltip>
+            Put your mouse on me!
+        </button>
+        <button>
+            <tooltip placement="bottomRight" trigger="click">Click again!</tooltip>
+            Click me!
+        </button>
+        <button open-modal="magic-modal">MAGIC</button>
+    </div>
+    <div id="magic-modal" class="modal">
+        <div class="modal-bg"></div>
+        <div class="modal-content">
+            <h3>Modal</h3>
+            <hr />
+            <p>Simple text, click outside to exit</p>
+        </div>
+    </div>
+</body>
+
 </html>
