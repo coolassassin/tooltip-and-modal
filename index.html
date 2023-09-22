@@ -7,7 +7,35 @@
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+        <button id="tooltip_on_hover">
+            Click me!
+            <span class="tooltip">
+                Hello JS World!
+            </span>
+        </button>
+        <button id="tooltip_on_click"> Click me!
+            <span class="tooltip">
+                Hello JS World!
+            </span>
+        </button>
+        <button id="modal_on_click" data-toggle="modal" data-target="#my_modal"> Click me! </button>
+
+        <div class="modal" id="my_modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h5>Modal window</h5>
+                </div>
+                <div class="modal-body">
+                    Hello JS World!
+                </div>
+                <div class="modal-footer">
+                    <button id="modal_button">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
