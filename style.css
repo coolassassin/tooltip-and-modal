@@ -74,13 +74,40 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  animation-duration: 0.25s;
+  position: relative;
+}
+@keyframes buttonClick {
+    0% {
+        outline: 5px solid lightskyblue;
+    }
+    20% {
+        outline: 4px solid rgba(137, 214, 255, 0.8);
+    }
+    40% {
+        outline: 3px solid rgba(137, 214, 255, 0.6);
+    }
+    60% {
+        outline: 2px solid rgba(137, 214, 255, 0.4);
+    }
+    80% {
+        outline: 1px solid rgba(137, 214, 255, 0.2);
+    }
+    100% {
+        outline: 0 solid rgba(135, 206, 250, 0);
+    }
+}
+button.clicked {
+    animation-name: buttonClick;
 }
 button:hover {
   border-color: #646cff;
+  color : #646cff;
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 5px solid lightskyblue;
 }
 
 @media (prefers-color-scheme: light) {
@@ -94,4 +121,93 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.modal {
+    display: none;
+    /*overflow: auto;*/
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_content {
+    text-align: left;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-30%, 0%);
+    width: 30%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+}
+
+.modal_buttons {
+    float: right;
+}
+
+.OK_button {
+    background-color: royalblue;
+    color: white;
+
+}
+
+.OK_button:hover {
+    /*  I am not able to make color beautiful ((((  */
+    background-color: #4186e1;
+    color: white;
+}
+
+.modal_header {
+    padding-top: 1px;
+}
+
+.close_modal {
+    /* I don't know why it's not square form */
+    float:right;
+    padding: 1px;
+    top: 5px;
+    right: 5px;
+    font-size: 25px;
+    color:dimgray;
+    cursor: pointer;
+    background-color: white;
+    animation-duration: 1ms;
+}
+
+.close_modal:hover {
+    background-color: rgba(194, 191, 191, 0.21);
+    color: black;
+    border-color: white;
+}
+
+.close_modal:focus,
+.close_modal:focus-visible {
+    outline: 4px solid lightskyblue;
+}
+
+.tooltip {
+    z-index: 1;
+    position: absolute;
+    bottom: 150%;
+    left: 5%;
+    background-color: black;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 10%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
 }

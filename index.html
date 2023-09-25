@@ -1,13 +1,31 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+</head>
+<body>
+<div id="app">
+    <button id="on_hover"> Tooltip on hover</button>
+    <button id="on_click"> Tooltip on click</button>
+    <button id="modal_button"> Modal on click</button>
+    <div id="modal" class="modal">
+        <div class="modal_content">
+            <div class="modal_header">
+                <button id="close_modal" class="close_modal">&times;</button>
+                <h4>Modal Window</h4>
+            </div>
+            <p> Hello JS World </p>
+            <div class="modal_buttons">
+                <button id="cancel_modal"> Cancel</button>
+                <button id="ok_modal" class="OK_button"> OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="/main.js"></script>
+</body>
 </html>
