@@ -24,7 +24,6 @@ document.getElementById("cancel_modal").addEventListener("click", close_modal)
 
 function add_tooltip(event) {
     this.blur()
-    this.classList.toggle("clicked");
     const tooltip = document.createElement("span")
     tooltip.innerHTML = "Hello World!";
     tooltip.className = "tooltip";
@@ -33,7 +32,6 @@ function add_tooltip(event) {
 
 function remove_tooltip(event) {
     this.blur()
-    this.classList.toggle("clicked");
     this.removeChild(this.lastChild)
 }
 
