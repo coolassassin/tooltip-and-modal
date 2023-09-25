@@ -111,8 +111,8 @@ button:focus-visible {
 
 .tooltip-content {
 	position: absolute;
-  visibility: hidden;
-  top: -120%;
+  display: none;
+  top: -60px;
   left: 0%;
 }
 
@@ -122,17 +122,17 @@ button:focus-visible {
   color: white;
   background-color: black;
   border-radius: 8px;
+  white-space: nowrap;
 }
 
 #tooltip-1:hover + .tooltip-content {
-  visibility: visible;
+  display: block;
 }
 
 .triangle {
 	position: relative;
 	width: 0px;
 	height: 0px;
-	margin-top: 8px;
 	border-left: 6px solid transparent;
   border-right: 6px solid transparent;
   border-top: 6px solid black;
@@ -140,12 +140,29 @@ button:focus-visible {
 }
 
 .modal {
+	z-index: 2;
   position: fixed;
-  width: 100%;
-  transform: translate(-50%, -100%);
+  display: none;
+	width: 25%;
+  transform: translate(-50%, -50%);
   left: 50%;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  text-align: left;
 }
 
 #modal-close-button {
 	float: right;
 }
+
+#shadow {
+	z-index: 1;
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 0.3;
+}
+

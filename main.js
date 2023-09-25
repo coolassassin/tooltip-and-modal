@@ -4,17 +4,22 @@ let btn2 = document.getElementById("tooltip-2");
 let tooltip2 = document.getElementById("tooltip-content-2");
 let btn3 = document.getElementById("modal-button");
 let modal = document.getElementById("modal-window");
+let shadow = document.getElementById("shadow");
+let modalCloseButton = document.getElementById("modal-close-button");
 
 function updateTooltip2(event) {
-  if (event.target == btn2 && tooltip2.style.visibility != "visible") {
-    tooltip2.style.visibility = "visible";
+	console.log(event.target);
+  if (event.target == btn2 && tooltip2.style.display != "block") {
+    tooltip2.style.display = "block";
   } else {
-    tooltip2.style.visibility = "hidden";
+    tooltip2.style.display = "none";
   }
-  if (event.target == btn3 && modal.style.display == "none") {
+  if (event.target == btn3 && modal.style.display != "block") {
   	modal.style.display = "block";
-  } else if (event.target != modal) {
+  	shadow.style.display = "block";
+  } else if (!modal.contains(event.target) || event.target == modalCloseButton) {
   	modal.style.display = "none";
+  	shadow.style.display = "none";
   }
 }
 
