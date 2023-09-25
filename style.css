@@ -105,7 +105,6 @@ button:hover {
   color : #646cff;
 }
 
-button:focus,
 button:focus-visible {
   outline: 5px solid lightskyblue;
 }
@@ -186,7 +185,6 @@ button:focus-visible {
     border-color: white;
 }
 
-.close_modal:focus,
 .close_modal:focus-visible {
     outline: 4px solid lightskyblue;
 }
