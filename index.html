@@ -1,13 +1,27 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+</head>
+<body>
+<div id="app">
+<!--    Poor man's table layout-->
+    <table>
+        <tr>
+            <td><div id="on_hover_tooltip" class="tooltip">This is the on hover tooltip!</div></td>
+            <td><div id="on_click_tooltip" class="tooltip">This is the on click tooltip!</div></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><button id="on_hover">Tooltip on hover</button></td>
+            <td><button id="on_click">Tooltip on click</button></td>
+            <td><button id="on_click_modal">Tooltip in modal on click</button></td>
+        </tr>
+    </table>
+</div>
+<script type="module" src="/main.js"></script>
+</body>
 </html>
