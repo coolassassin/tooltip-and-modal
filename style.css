@@ -112,11 +112,12 @@ button:focus-visible {
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background: #646464;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    color: #ffc64a;
 }
 
 /* The Close Button */

@@ -2,7 +2,6 @@ function addOrRemoveTooltip(){
     return this.title !== '' ? addTooltip(this) : removeTooltip(this)
 }
 function addTooltip(elem){
-    console.log("add");
     const title = elem.title;
     elem.title = '';
     elem.setAttribute("tooltip", title);
@@ -17,7 +16,6 @@ function addTooltip(elem){
     elem.parentNode.insertBefore(tooltipWrap, elem);
 }
 function removeTooltip(elem){
-    console.log("remove");
     elem.title = elem.getAttribute("tooltip");
     elem.removeAttribute("tooltip");
     document.querySelector(".tooltip").remove();
