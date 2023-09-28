@@ -1,12 +1,22 @@
 
+function setChildVisibility(element, visibility) {
+    const child = element.firstElementChild
+    if (child != null)
+        child.style.visibility = visibility
+}
+
 const hoverButton = document.getElementById("hover-button")
 hoverButton.onmouseover = () => {
-    const tooltip = hoverButton.firstElementChild
-    if (tooltip != null)
-        tooltip.style.visibility = "visible"
+    setChildVisibility(hoverButton, "visible")
 }
 hoverButton.onmouseleave = () => {
-    const tooltip = hoverButton.firstElementChild
-    if (tooltip != null)
-        tooltip.style.visibility = "hidden"
+    setChildVisibility(hoverButton, "hidden")
+}
+
+const clickButton = document.getElementById("click-button")
+clickButton.onclick = () => {
+    setChildVisibility(clickButton, "visible")
+    setTimeout(() => {
+        setChildVisibility(clickButton, "hidden")
+    }, 2000)
 }
