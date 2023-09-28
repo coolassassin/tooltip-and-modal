@@ -3,11 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/style.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+        <div id="modal-popup">
+            <table id="modal-popup-table">
+                <tr><td colspan="2"><div id="modal-popup-text">Hello world!</div></td></tr>
+                <tr>
+                    <td>
+                        <button id="modal-popup-cancel">Cancel</button>
+                    </td>
+                    <td id="cell-modal-popup-ok">
+                        <button id="modal-popup-ok">OK</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="tooltip-on-hover">
+            <div class="tooltip-popup" id="tooltip-on-hover-popup">
+                <div class="tooltip-message">Hello world!</div>
+            </div>
+            <button id="button-tooltip-on-hover">Tooltip on hover</button>
+        </div>
+        <div id="tooltip-on-click">
+            <div class="tooltip-popup" id="tooltip-on-click-popup">
+                <div class="tooltip-message">Hello world!</div>
+            </div>
+            <button id="button-tooltip-on-click">Tooltip on click</button>
+        </div>
+        <div id="modal-on-click">
+            <div class="tooltip-popup">
+                <div class="tooltip-message">Hello world!</div> <?- Just to align the buttons >
+            </div>
+            <button id="button-modal-on-click">Modal on click</button>
+        </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
