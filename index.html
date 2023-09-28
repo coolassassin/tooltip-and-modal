@@ -1,24 +1,25 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script type="module" src="/main.js"></script>
-  </head>
-  <body>
-  	<div id="shadow"></div>
-    <div id="app">
-      <div id="modal-window" class="modal">
-      	<h3>Modal window</h3>
-      	Hello world!
-  			<button id="modal-close-button">Close</button>
-  		</div>
-		  <div class="buttons">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Vite App</title>
+		<script type="module" src="/main.js"></script>
+	</head>
+	<body>
+	<div id="shadow">
+		<div id="modal-window" class="modal">
+	  		<h3>Modal window</h3>
+	  		Hello world!
+			<button id="modal-close-button">Close</button>
+		</div>
+	</div>
+	<div id="app">
+		<div class="buttons">
 		  	<div class="tooltip">
 		  		<button id="tooltip-1">Tooltip on hover</button>
-		  		<div class="tooltip-content">
+		  		<div class="tooltip-content"  id="tooltip-content-1">
 		  			<div class="tooltip-inner-content">Hello world!</div>
 		  			<div class="triangle"></div>
 		  		</div>
@@ -31,8 +32,8 @@
 		  		</div>
 		  	</div>
 		  	<button id="modal-button">Modal on click</button>
-		  </div>
-    </div>
-  </body>
+		</div>
+	</div>
+	</body>
 </html>
 
