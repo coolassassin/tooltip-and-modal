@@ -20,3 +20,16 @@ clickButton.onclick = () => {
         setChildVisibility(clickButton, "hidden")
     }, 2000)
 }
+
+function openModal() {
+    var dialog = document.getElementById("modal-dialog")
+    if (dialog == null)
+        dialog = document.createElement("dialog")
+    dialog.id = "modal-dialog"
+    dialog.innerHTML = `
+    hi modal, i'm dad <br/>
+    <button onclick="document.getElementById('modal-dialog').close()">bye modal</button>
+    `
+    document.body.appendChild(dialog)
+    dialog.showModal()
+}
