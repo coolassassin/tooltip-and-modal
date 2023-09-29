@@ -25,7 +25,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
+  /* display: flex; */ /* For some reason ruins 'space-around' in '.buttons' (???) */
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -78,9 +78,10 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
 }
 
 @media (prefers-color-scheme: light) {
