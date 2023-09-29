@@ -21,7 +21,10 @@ document.getElementById('app').append(buttonsDiv);
 hooverButton.setAttribute('tooltip-text', 'I\'m the almighty tooltip!');
 
 clickButton.addEventListener('click', function (event) {
-    console.log(this);
+    this.setAttribute('tooltip-text', 'I\'m the almighty tooltip too!');
+});
+clickButton.addEventListener('mouseenter', function (event) {
+    this.removeAttribute('tooltip-text');
 });
 
 modalButton.addEventListener('click', function (event) {
