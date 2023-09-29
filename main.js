@@ -1,9 +1,5 @@
 //import './style.css';
 
-function tooltipHover() {
-    console.log('dkfsfndksnd');
-}
-
 function displayHint(event) {
     let hintToShow = event.target.querySelector("div.hintPad")
     hintToShow.style.opacity = "1";
@@ -27,7 +23,7 @@ for (let element of hints) {
     }
     else if (type == "click") {
         element.addEventListener("click", function (event) {
-            console.log(event.target.clicked)
+            // console.log(event.target.clicked)
             if (event.target.clicked) {
                 hideHint(event);
                 event.target.clicked = false;
@@ -77,5 +73,4 @@ for (let element of hints) {
     }
 
 }
-console.log(hints)
 
