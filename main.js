@@ -18,12 +18,8 @@ let modalButton = appendButton(buttonsDiv, 'Modal on click');
 
 document.getElementById('app').append(buttonsDiv);
 
-hooverButton.addEventListener('mouseover', function (event) {
-    console.log(this);
-});
-hooverButton.addEventListener('mouseout', function (event) {
-    console.log(this);
-});
+hooverButton.className = 'tooltipped';
+hooverButton.setAttribute('tooltip-text', 'I\'m the almighty tooltip!');
 
 clickButton.addEventListener('click', function (event) {
     console.log(this);

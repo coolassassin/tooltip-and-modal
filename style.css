@@ -84,6 +84,55 @@ button:hover {
   justify-content: space-around;
 }
 
+.tooltipped {
+  position: relative;
+}
+
+.tooltipped:before {
+  content: attr(tooltip-text);
+  position: absolute;
+
+  left: 50%;
+  transform: translateX(-50%);
+  
+  top: 100%;
+  margin-top: 10px;
+  
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+
+  opacity: 0;
+  transition: .3s opacity;
+}
+
+.tooltipped:hover:before {
+  opacity: 1;
+}
+
+.tooltipped:after {
+  content: "";
+  position: absolute;
+  
+  top: 100%;
+  margin-top: -5px;
+ 
+  left: 50%;
+  transform: translateX(-50%);
+ 
+  border: 10px solid #000;
+  border-color: transparent transparent black transparent;
+  
+  opacity: 0;
+  transition: .2s opacity; /* Is it possible to make the arrow fade exactly with the tooltip? */
+}
+.tooltipped:hover:after {
+  opacity: 1;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
