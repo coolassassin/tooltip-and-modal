@@ -12,13 +12,14 @@ function addTooltip(elem){
     const linkProps = elem.getBoundingClientRect();
     const tooltipProps = tooltipWrap.getBoundingClientRect();
     const topPos = linkProps.top - (tooltipProps.height + padding);
-    tooltipWrap.setAttribute('style','top:'+topPos+'px;'+'left:'+linkProps.left+'px;')
+    tooltipWrap.style.top = topPos + 'px';
+    tooltipWrap.style.left = linkProps.left + 'px';
     elem.parentNode.insertBefore(tooltipWrap, elem);
 }
 function removeTooltip(elem){
     elem.title = elem.getAttribute("tooltip");
     elem.removeAttribute("tooltip");
-    document.querySelector(".tooltip").remove();
+    elem.previousElementSibling.remove()
 }
 
 const modal = document.getElementById("myModal")
