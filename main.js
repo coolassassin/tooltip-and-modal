@@ -1,7 +1,5 @@
 import './style.css';
 
-console.log('Hello world');
-
 function appendButton(to, buttonText) {
     let button = document.createElement('button');
     button.textContent = buttonText;
@@ -9,12 +7,12 @@ function appendButton(to, buttonText) {
     return button;
 }
 
-let buttonsDiv = document.createElement('div');
+const buttonsDiv = document.createElement('div');
 buttonsDiv.className = 'buttons';
 
-let hooverButton = appendButton(buttonsDiv, 'Tooltip on hoover');
-let clickButton = appendButton(buttonsDiv, 'Tooltip on click');
-let modalButton = appendButton(buttonsDiv, 'Modal on click');
+const hooverButton = appendButton(buttonsDiv, 'Tooltip on hoover');
+const clickButton = appendButton(buttonsDiv, 'Tooltip on click');
+const openModalButton = appendButton(buttonsDiv, 'Modal on click');
 
 document.getElementById('app').append(buttonsDiv);
 
@@ -27,6 +25,29 @@ clickButton.addEventListener('mouseenter', function (event) {
     this.removeAttribute('tooltip-text');
 });
 
-modalButton.addEventListener('click', function (event) {
-    console.log(this);
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const closeModalButton = document.querySelector('.close-button');
+const modalVideoPlayer = document.querySelector('.youtube-video').contentWindow
+
+function controlVideoPlayer(commandName) {
+    let command = {
+        'event': 'command',
+        'func': commandName
+    };
+    modalVideoPlayer.postMessage(JSON.stringify(command), '*');
+}
+
+openModalButton.addEventListener('click', function (event) {
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+    controlVideoPlayer('unMute');
+    controlVideoPlayer('playVideo');
+});
+[closeModalButton, overlay].forEach(function (elem) {
+    elem.addEventListener('click', function (event) {
+        modal.classList.add('hidden');
+        overlay.classList.add('hidden');
+        controlVideoPlayer('pauseVideo');
+    });
 });

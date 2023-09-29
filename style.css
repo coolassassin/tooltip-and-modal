@@ -24,9 +24,11 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  /* display: flex; */ /* For some reason ruins 'space-around' in '.buttons' (???) */
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -34,6 +36,12 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 0.6;
+  text-align: center;
 }
 
 #app {
@@ -131,6 +139,74 @@ button:hover {
 }
 [tooltip-text]:hover:after {
   opacity: 1;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  width: 450px;
+  padding: 1.3rem;
+  min-height: 200px;
+  position: absolute;
+  top: 20%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 15px;
+}
+
+.modal .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+.modal {
+  z-index: 2;
+}
+
+.close-button {
+  display: inline-block;
+  padding: 0.8rem 1.4rem;
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */ 
+  padding-top: 25px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @media (prefers-color-scheme: light) {
