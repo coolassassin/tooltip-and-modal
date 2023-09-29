@@ -19,6 +19,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -49,9 +50,11 @@ h1 {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vanilla:hover {
   filter: drop-shadow(0 0 2em #f7df1eaa);
 }
@@ -75,9 +78,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -88,10 +93,95 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
+}
+
+[hint] .hintPad {
+  font-size: 12px;
+  color: white;
+  padding: 8px;
+  border: 1px solid #54DEFD;
+  position: fixed;
+  background-color: #0D0221;
+  border-radius: 6px;
+  opacity: 0;
+  transition:
+    opacity 0.5s;
+}
+
+[hint] .hintPad::before {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #0D0221;
+  position: absolute;
+  margin-top: -12px;
+  content: "";
+  left: 5%;
+}
+
+#buttons {
+  margin: 0 auto;
+}
+
+#buttons button {
+  margin: 20px;
+}
+
+.moduleWindow {
+  font-size: 32px;
+  padding: 20px;
+  color: white;
+  background-color: #0D0221;
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 50%;
+}
+
+.moduleWindow button {
+  font-size: 15px;
+}
+
+.buttonsLine {
+  padding-right: 32px;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+}
+
+.buttonConfirm {
+  margin: 16px 8px 32px 8px;
+  background-color: white;
+  color: #0D0221
+}
+
+.buttonDecline {
+  margin: 16px 8px 32px 8px;
+  background-color: #0D0221;
+  color: white;
+  border: 1px solid white;
+}
+
+.cross {
+  margin: 8px;
+  padding: 8px 12px;
+  background-color: #0D0221;
+  color: white;
+  top: 0;
+  position: absolute;
+  right: 0;
+}
+
+.extra {
+  font-size: 18px;
 }
