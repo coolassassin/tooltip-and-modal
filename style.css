@@ -84,11 +84,11 @@ button:hover {
   justify-content: space-around;
 }
 
-.tooltipped {
+[tooltip-text] {
   position: relative;
 }
 
-.tooltipped:before {
+[tooltip-text]:before {
   content: attr(tooltip-text);
   position: absolute;
 
@@ -109,11 +109,11 @@ button:hover {
   transition: .3s opacity;
 }
 
-.tooltipped:hover:before {
+[tooltip-text]:hover:before {
   opacity: 1;
 }
 
-.tooltipped:after {
+[tooltip-text]:after {
   content: "";
   position: absolute;
   
@@ -129,7 +129,7 @@ button:hover {
   opacity: 0;
   transition: .2s opacity; /* Is it possible to make the arrow fade exactly with the tooltip? */
 }
-.tooltipped:hover:after {
+[tooltip-text]:hover:after {
   opacity: 1;
 }
 
