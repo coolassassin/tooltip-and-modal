@@ -10,22 +10,26 @@ const button_modal_tooltip_ok = document.getElementById("modal_tooltip_ok")
 const button_modal_tooltip_close = document.getElementById("modal_tooltip_close")
 
 button_on_hover.addEventListener("mouseover", () => {
-    tooltip_on_hover.style["visibility"] = "visible";
+    tooltip_on_hover.classList.remove("hide");
 })
 button_on_hover.addEventListener("mouseout", () => {
-    tooltip_on_hover.style["visibility"] = "hidden";
+    tooltip_on_hover.classList.add("hide");
 })
 
 button_on_click.addEventListener("click", () => {
-    tooltip_on_click.style["visibility"] = (tooltip_on_click.style["visibility"] === "visible") ? "hidden" : "visible";
+    if (tooltip_on_click.classList.contains("hide")) {
+        tooltip_on_click.classList.remove("hide");
+    } else {
+        tooltip_on_click.classList.add("hide");
+    }
 })
 
 button_on_click_modal.addEventListener("click", () => {
-    tooltip_modal.style["visibility"] = "visible"
+    tooltip_modal.classList.remove("hide");
 })
 
 function close_modal() {
-    tooltip_modal.style["visibility"] = "hidden"
+    tooltip_modal.classList.add("hide");
 }
 
 button_modal_tooltip_ok.addEventListener("click", close_modal);
