@@ -132,3 +132,23 @@ button:focus-visible {
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+
+.tip-block {
+    display: inline-block;
+    position: relative;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 0;
+    width: 1px;
+}
+
+.helptip div:hover,
+.helptip span:hover {
+    background: #fff;
+}
+
+.helptip-content {
+    display: none;
+}
