@@ -4,14 +4,17 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--color);
+  background-color: var(--background-color);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --color: rgba(255, 255, 255, 0.87);
+  --background-color: #242424;
 }
 
 a {
@@ -85,8 +88,8 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --color: #213547;
+    --background-color: #ffffff;
   }
   a:hover {
     color: #747bff;
@@ -94,4 +97,68 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip__box {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tooltip__box, .tooltip__triangle {
+  position: absolute;
+  transition: .3s;
+}
+
+.tooltip_hover:hover .tooltip__box, .tooltip_hover:hover .tooltip__triangle {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip__box {
+  color: var(--background-color);
+  background-color: var(--color);
+  padding: 7px;
+  border-radius: 5px;
+  bottom: calc(100% + 10px);
+  left: 5px;
+}
+
+.tooltip__triangle {
+  border-top: 5px solid var(--color);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  width: 0px;
+  height: 0px;
+  top: 100%;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 2;
+  display: flex;
+}
+
+.modal-window {
+  background-color: white;
+  padding: 30px;
+  margin: auto;
+  min-width: 50vw;
+  border-radius: 5px;
+  position: relative;
+}
+
+.modal-window__cross {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
 }
