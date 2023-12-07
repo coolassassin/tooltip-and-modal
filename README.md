@@ -16,3 +16,6 @@ Need to make tooltips by click and hover
 
 [JS Tutorial](https://www.javascripttutorial.net/)
 [How to work with DOM](https://www.javascripttutorial.net/javascript-dom/)
+
+## Result
+![img.png](img.png)
