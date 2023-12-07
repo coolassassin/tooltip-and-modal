@@ -1,13 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <button class="tooltip-container" id="button-click">Click
+        <div class="tooltip" id="tooltip-click">Good morning!</div>
+    </button>
+    <button id="button-modal">Modal</button>
+    <div class="modal-win" id="modal">
+        <div class="modal-content" id="modal-content">
+            <div class="modal-win-header">Good Window</div>
+            <div class="modal-win-body">Good night!</div>
+            <div class="modal-win-buttons">
+                <button class="decline">Decline</button>
+                <button class="accept">Accept</button>
+            </div>
+        </div>
+    </div>
+    <button class="tooltip-container" id="button-hover">Hover
+        <div class="tooltip" id="tooltip-hover">Good afternoon!</div>
+    </button>
+</div>
+<script type="module" src="main.js"></script>
+</body>
 </html>
